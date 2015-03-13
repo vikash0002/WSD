@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<!--
+
+  @(#)package.html
+
+ Copyright © 2003 The Regents of the University of California. All Rights Reserved. Permission to use, copy, modify, and distribute this software and its documentation for educational, research and non-profit purposes, without fee, and without a written agreement is hereby granted, provided that the above copyright notice, this paragraph and the following two paragraphs appear in all copies. This software program and documentation are copyrighted by The Regents of the University of California ("The University of California").
+
+THE SOFTWARE PROGRAM AND DOCUMENTATION ARE SUPPLIED "AS IS," WITHOUT ANY ACCOMPANYING SERVICES FROM THE UNIVERSITY OF CALFORNIA. FURTHERMORE, THE UNIVERSITY OF CALIFORNIA DOES NOT WARRANT THAT THE OPERATION OF THE PROGRAM WILL BE UNINTERRUPTED OR ERROR-FREE. THE END-USER UNDERSTANDS THAT THE PROGRAM WAS DEVELOPED FOR RESEARCH PURPOSES AND IS ADVISED NOT TO RELY EXCLUSIVELY ON THE PROGRAM FOR ANY REASON.
+
+IN NO EVENT SHALL THE UNIVERSITY OF CALIFORNIA BE LIABLE TO ANY PARTY FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, INCLUDING LOST PROFITS, ARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION, EVEN IF THE UNIVERSITY OF CALIFORNIA HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. THE UNIVERSITY OF CALIFORNIA SPECIFICALLY DISCLAIMS ANY WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE SOFTWARE PROVIDED HEREUNDER IS ON AN "AS IS" BASIS, AND THE UNIVERSITY OF CALIFORNIA HAS NO OBLIGATIONS TO PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS. 
+-->
+</head>
+<body>
+
+<p>This module provides a new way of thinking about graph drawing. 
+In particular, it is designed to be a great deal more flexible than 
+the previous model, and to allow users to manage a great deal more than
+they once had.</p>
+
+<p>At its core is a notion of the EmittedLayout. An EmittedLayout is
+a way of storing the current positions of a set of vertices. An EmittedLayout
+comes from one of two places. First, it may be generated anew from a
+StaticLayout. A static layout generates a layout de novo (well, from outside the graphics 
+system): from a saved file, algorithmically, or whatever. The call "emit" to a 
+static layout must produce a new EmittedLayout. (This need not work more than once).</p>
+
+<p>Second, it may come from an animation cycle. Largely, these consist of IterableLayouts. 
+An IterableLayout takes in a starting vertex configuration (in the form of an
+EmittedLayout), and is responsible for producing a new vertex configuration. 
+When advance() is called on an iterable layout, it (presumably) moves forward
+one step in time. When emit() is called, the last stable copy of the data is retruned.</p>
+
+<p>Note that this has several implications:
+First, the sequence advance() ; emit()  ; 	emit() ; 	emit()
+should return the t=1 version of the thing three times in a row.</p>
+
+<p>Second, this should be fairly thread-safe. Specifically, it should be safe to call 
+emit() while advance() is still running. (Throughout, I assume that Advance may
+take a rather long time to run, and that the application should be interactive
+even while advance is waiting. When advance is fairly fast, some gratuitous
+copies of the layout may be made.)</p>
+
+<p>The mechanism responsible for handling this iteration is the LayoutIterator. It repeatedly 
+calls advance(), then sends the emitted layout to the graph panel.</p>
+
+<p>The graph panel, in turn, is the usual Swing object; it iterates in a 
+paintComponent loop. There is a subtlety here, too, but to clarify it, I
+must first discuss the Pipeline.</p>
+
+<hr>
+
+<p>The Pipeline is the mechansim that applies any necessary distortions, twists,
+resizings to the graph. It consists of zero or more LayoutTransformers. 
+A LayoutTransformer modifies (in place) an EmittedLayout to match the needs
+of this particular display.</p>
+
+<p>The default pipeline is pre-loaded (in the LocalGraphDraw c'tor)
+with a FitOnScreen transformer, which expands the current visualization 
+to take up the full screen, and the SlightMarginTransformer, which 
+adds a small amount of space on all sides. (How can these be removed? 
+Not easily, right now.)</p>
+
+<p>So when a new layout is created by the LayoutIterator and the IterableLayout, 
+it must be shuffled through the pipeline (in the GraphLayoutPanel). 
+First, a copy of the layout is kept. (You'll see why in a moment). 
+Second, it is  processed through the pipeline foreward: first the 
+FitOnScreen, then the SlightMargin, and then any others that the 
+user has added.</p>
+
+<p>What happens when the screen is resized? Two things. 
+First, the pipeline may need to be adjusted. (Both FitOnScreen and SlightMargin,
+for instance, care about the dimensions of the screen). As such, a Dimension object
+is passed BACKWARDS through the pipeline. That is, the last object is sent that
+object, then the second-to-last, and so on. This allows different stages of the 
+pipeline to constrain the area in which a previous layout could work. (This is 
+Pipeline.adjustSizes().) </p>
+
+<p>Second, the copy of the layout that we made two paragraphs back is shuffled 
+through the pipeline. This is GraphLayoutPanel.resizeLayouts(). Good thing 
+we had a clean copy, since every pass through the pipeline can stomp on the
+previous one.</p>
+
+<hr>
+
+<p>Last, the new, final EmittedLayout is used for two tasks. 
+First, it gives the locations of the vertices and edges to the renderer. (
+The vertices and edges are currently drawn in a random order, although all
+edges will be drawn before any vertices are. Perhaps this might be fixed?)
+Second, it answers the function "getClosestVertex" and "getClosestEdge"
+mouse clicks, and thus figures out which mouse click goes with which vertex.</p> 
+
+<p>The vertexes and edges, incidently, are drawn by a VertexRenderer and an
+EdgeRenderer. The user is responsible for providing both.</p>
+
+<hr>
+
+<p>So why is this system so general?</p>
+
+<p>Well, because it allows a lot of very cool stuff. For example, it's
+possible (and easy!) to generate graphs connected by non-straight lines.
+Add in a CrookedLineTransformer somewhere in the pipeline, and you are
+pretty much set. (You'll also need a good renderer).</p>
+
+<p>Want to map things in a hyperbolic space? Should be little difficulty.</p>
+
+<p>Want to paint nodes green? Very easy!</p>
+
+<hr>
+
+<p>What the system does NOT provide is: 
+<ol>
+<li/>Vertex dragging. In particular, because of the current setup, it is
+hard to figure out what the reverse mapping of a dragged vertex is. (Just
+because it was dragged +3y in the final, visual system doesn't mean that it
+was dragged +3y in the original coordinate system). One possible answer is to
+assume that the coordinate systems are at least relatively equal, and to
+simply send the changed coordinates back to the original layout.
+
+<li/>No universal mechanism for picked or selected vertices. (Ought tehre to be?)
+
+<li/>No mechanism for freezing vertices in place. (This may need to be
+supported at the IterativeLayout level.)
+
+<li/>Graph mutation. (Still working on this one.)
+
+<li/>We also had a user request for locking vertices in place after they are first 
+laid out--but allowing the graph to mutate. (Still also working on this one).
+</ol>
+</p>
+
+<hr>
+ 
+Notes on graph mutation: STEPS ARE
+<ol>
+<li/>Graph mutation is triggered by an [what].update( g ) command
+	[what] then:
+<li/> Calculates which vertices are new, and which vertices are old
+<li/> Asks the current UpdatableIterable layout to take care of it. The UIL
+will:
+    <ol>
+	<li/> Initialize VV's for those new vertices and new edges
+	<li/> Remove the VE's for the old vertices and the old edges
+	</ol>
+</ol>	
+<p>Both will happen "in their own sweet time"--that is, it's the visualizations'
+responsibility to decide what happens with them.</p> 
+	
+
+</body>
+</html>
+

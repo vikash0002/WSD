@@ -1,0 +1,39 @@
+<html>
+  <head>
+  <title>JUNG Demo: Two Model Demo</title>
+  <link rel="stylesheet" href="../default.css" type="text/css" media="screen" />  
+  </head>
+  <body>
+    <applet code="samples.graph.TwoModelDemo.class"
+            archive="jar/jung-ext.jar,jar/colt.jar,jar/commons-collections.jar"
+            width="700" height="400">
+    </applet>
+    
+	<p>
+	This example demonstrates JUNG's ability to use two different layouts
+	to simultaneously display the same graph in two views. Picking and
+	overall transformations are shared between the two views.
+	<p>Be sure to try out the mouse listeners:
+   <h3>Picking Mode:</h3>
+	<ul>
+	<li> MouseButtonOne press on a Vertex or Edge to select it
+	<li> MouseButtonOne+Shift press on a Vertex or Edge to add or toggle selection
+	<li> MouseButtonOne+drag on a Vertex to move all selected vertices
+	<li> MouseButtonOne+drag to select Vertices in a rectangle
+	<li> MouseButtonOne+Shift+drag to add to selection with Vertices in a rectangle
+	</ul>
+	<p>
+	<h3>TransformingMode:</h3>
+	<ul>
+	<li> MouseButtonOne+drag to translate the display
+	<li> MouseButtonOne+Shift+drag to rotate the display
+	<li> MouseButtonOne+ctrl(or Command)+drag to shear the display
+	</ul>
+	<p>
+	<h3>Both Modes:</h3>
+	<ul>
+	<li> MouseWheel to scale. When scale &lt; 1, view is scaled. When scale &gt; 1, layout is scaled.
+	</ul>
+	</p>	
+	  </body>
+</html>

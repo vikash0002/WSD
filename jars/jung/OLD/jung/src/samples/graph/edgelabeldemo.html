@@ -1,0 +1,41 @@
+<html>
+  <head>
+  <title>JUNG Demo: Advanced Edge Labels</title>
+  <link rel="stylesheet" href="../default.css" type="text/css" media="screen" />  
+  </head>
+  <body>
+    <applet code="samples.graph.EdgeLabelDemo.class"
+            archive="jar/jung-ext.jar,jar/colt.jar,jar/commons-collections.jar"
+            width="600" height="500">
+    </applet>
+    
+	<p>
+	This example demonstrates a new feature to align edge labels to be
+	parallel with edges. The slider controls let you position the labels
+	along the length of the edges. 
+		<p>Be sure to try out the mouse listeners:
+   <h3>Picking Mode:</h3>
+	<ul>
+	<li> MouseButtonOne press on a Vertex or Edge to select it
+	<li> MouseButtonOne+Shift press on a Vertex or Edge to add or toggle selection
+	<li> MouseButtonOne+drag on a Vertex to move all selected vertices
+	<li> MouseButtonOne+drag to select Vertices in a rectangle
+	<li> MouseButtonOne+Shift+drag to add to selection with Vertices in a rectangle
+	</ul>
+	<p>
+	<h3>TransformingMode:</h3>
+	<ul>
+	<li> MouseButtonOne+drag to translate the display
+	<li> MouseButtonOne+Shift+drag to rotate the display
+	<li> MouseButtonOne+ctrl(or Command)+drag to shear the display
+	</ul>
+	<p>
+	<h3>Both Modes:</h3>
+	<ul>
+	<li> MouseWheel to scale. When scale &lt; 1, view is scaled. When scale &gt; 1, layout is scaled.
+	</ul>
+	</p>	
+	
+	</p>	
+	  </body>
+</html>

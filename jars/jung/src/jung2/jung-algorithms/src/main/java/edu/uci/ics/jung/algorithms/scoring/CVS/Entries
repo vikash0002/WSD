@@ -1,0 +1,18 @@
+/AbstractIterativeScorer.java/1.15/Fri Dec 19 00:53:03 2008//
+/AbstractIterativeScorerWithPriors.java/1.10/Fri Dec 19 00:53:03 2008//
+/BarycenterScorer.java/1.3/Fri Dec 19 00:53:03 2008//
+/BetweennessCentrality.java/1.4/Sun Jul 19 23:50:53 2009//
+/ClosenessCentrality.java/1.3/Fri Dec 19 00:53:03 2008//
+/DegreeScorer.java/1.4/Fri Dec 19 00:53:03 2008//
+/DistanceCentralityScorer.java/1.9/Sun Oct 25 04:50:00 2009//
+/EdgeScorer.java/1.4/Tue Jan 20 01:41:22 2009//
+/EigenvectorCentrality.java/1.9/Fri Dec 19 00:53:03 2008//
+/HITS.java/1.9/Sun Apr  5 06:50:30 2009//
+/HITSWithPriors.java/1.14/Mon Mar  9 05:23:27 2009//
+/KStepMarkov.java/1.2/Sat Feb 28 05:18:15 2009//
+/PageRank.java/1.8/Fri Dec 19 00:53:03 2008//
+/PageRankWithPriors.java/1.13/Fri Dec 19 00:53:03 2008//
+/VertexScorer.java/1.3/Sat Jul 19 06:28:37 2008//
+/VoltageScorer.java/1.11/Thu Feb 26 06:56:53 2009//
+/package.html/1.2/Wed Jul  9 23:47:15 2008//
+D

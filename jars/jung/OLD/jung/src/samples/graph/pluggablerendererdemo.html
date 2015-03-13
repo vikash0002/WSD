@@ -1,0 +1,57 @@
+<html>
+  <head>
+  <title>JUNG Demo: PluggableRendererDemo</title>
+  <link rel="stylesheet" href="../default.css" type="text/css" media="screen" />  
+  </head>
+  <body>
+    <applet code="samples.graph.PluggableRendererDemo.class"
+            archive="jar/jung-ext.jar,jar/colt.jar,jar/commons-collections.jar"
+            width="600" height="800">
+    </applet>
+    
+<p>Shows off some of the capabilities of <code>PluggableRenderer</code>.
+This code provides examples of different ways to provide and
+change the various functions that provide property information
+to the renderer.</p>
+
+<p>This demo creates a random mixed-mode graph with random edge
+weights using <code>TestGraph.generateMixedRandomGraph</code>.
+It then runs <code>VoltageRanker</code> on this graph, using half
+of the "seed" vertices from the random graph generation as 
+voltage sources, and half of them as voltage sinks.</p>
+
+<p>What the controls do:
+<ul>
+<li/>"vertex seed coloring": if checked, the seed vertices are colored blue, 
+and all other vertices are colored red.  Otherwise, all vertices are colored
+a slightly transparent red (except the currently "picked" vertex, which is
+colored transparent purple).
+<li/>"vertex selection stroke highlighting": if checked, the picked vertex
+and its neighbors are all drawn with heavy borders.  Otherwise, all vertices
+are drawn with light borders.
+<li/>"show vertex ranks (voltages)": if checked, each vertex is labeled with its
+calculated 'voltage'.  Otherwise, vertices are unlabeled.
+<li/>"vertex degree shapes": if checked, vertices are drawn with a polygon with
+number of sides proportional to its degree.  Otherwise, vertices are drawn
+as ellipses.
+<li/>"vertex voltage size": if checked, vertices are drawn with a size 
+proportional to their voltage ranking.  Otherwise, all vertices are drawn 
+at the same size.
+<li/>"vertex degree ratio stretch": if checked, vertices are drawn with an
+aspect ratio (height/width ratio) proportional to the ratio of their indegree to
+their outdegree.  Otherwise, vertices are drawn with an aspect ratio of 1.
+<li/>"bold text": if checked, all vertex and edge labels are drawn using a
+boldface font.  Otherwise, a normal-weight font is used.  (Has no effect if
+no labels are currently visible.)
+<li/>"edge weight highlighting": if checked, edges with weight greater than
+a threshold value are drawn using thick black solid lines, and other edges are drawn
+using thin gray dotted lines.  (This combines edge stroke and color.) Otherwise,
+all edges are drawn with thin black solid lines.
+<li/>"show edge weights": if checked, edges are labeled with their weights.
+Otherwise, edges are not labeled.
+<li/>"show undirected edge arrows": if checked, undirected edges are drawn with
+arrowheads at each end.  Otherwise, no arrows are used for undirected edges.
+</ul>
+</p>
+	  </body>
+</html>

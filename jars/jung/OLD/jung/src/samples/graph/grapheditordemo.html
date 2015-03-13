@@ -1,0 +1,49 @@
+<html>
+  <head>
+  <title>JUNG Demo: Interactive Graph Editing</title>
+  <link rel="stylesheet" href="../default.css" type="text/css" media="screen" />  
+  </head>
+  <body>
+    <applet code="samples.graph.GraphEditorDemo.class"
+            archive="jar/jung-ext.jar,jar/colt.jar,jar/commons-collections.jar"
+            width="600" height="500">
+    </applet>
+    
+	<p>
+	This example demonstrates a simple interactive graph editor. There are three
+	modes available: Editing, Picking, and Transforming
+  <h3>Editing Mode:</h3>
+  <ul>
+  <li> MouseButtonOne press on empty space creates a new Vertex
+  <li> MouseButtonOne press on a Vertex, followed by a drag to another Vertex creates an undirected edge between them
+  <li> MouseButtonOne+Shift on a Vertex, followed by a drag to another Vertex creates a directed edge between them
+  </ul>
+   <h3>Picking Mode:</h3>
+	<ul>
+	<li> MouseButtonOne press on a Vertex or Edge to select it
+	<li> MouseButtonOne+Shift press on a Vertex or Edge to add or toggle selection
+	<li> MouseButtonOne+drag on a Vertex to move all selected vertices
+	<li> MouseButtonOne+drag to select Vertices in a rectangle
+	<li> MouseButtonOne+Shift+drag to add to selection with Vertices in a rectangle
+	</ul>
+	<p>
+	<h3>TransformingMode:</h3>
+	<ul>
+	<li> MouseButtonOne+drag to translate the display
+	<li> MouseButtonOne+Shift+drag to rotate the display
+	<li> MouseButtonOne+ctrl(or Command)+drag to shear the display
+	</ul>
+	<p>
+	<h3>All Modes:</h3>
+	<ul>
+	<li> MouseButtonThree on an empty space shows a popup menu to create a Vertex
+	<li> MouseButtonThree on a Vertex shows a popup to delete the Vertex
+	<ul><li>If any Vertices are picked, the popup menu allow creation of an edge.
+	</ul>
+	<li> MouseWheel to scale. When scale &lt; 1, view is scaled. When scale &gt; 1, layout is scaled.
+	</ul>
+	</p>	
+	
+	</p>	
+	  </body>
+</html>

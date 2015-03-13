@@ -1,0 +1,24 @@
+<html>
+  <head>
+  <title>JUNG Demo: Add-a-Node Demo</title>
+  <link rel="stylesheet" href="../default.css" type="text/css" media="screen" />  
+  </head>
+  <body>
+    <applet code="samples.graph.AddNodeDemo.class"
+            archive="jar/jung-ext.jar,jar/colt.jar,jar/commons-collections.jar"
+            width="500" height="500">
+    </applet>
+    
+	<p>
+	This example demonstrates JUNG's ability to handle dynamic graphs (and
+	the new, prettier SettableRenderer). Every two seconds, a new vertex is 
+	added to the graph and drawn at a random position. In the FRLayout 
+	condition, the graph is relaxed for half a second, then jumps to the 
+	new view. In the SpringLayout condition, the graph smoothly animates.
+	Note that when FRLayout gets to the point where it takes more than 
+	half a second, there can be synchronization problems between the
+	renderer and the layout animation (which causes nodes to seem
+	disconnected from edges).	
+	</p>	
+	  </body>
+</html>

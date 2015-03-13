@@ -1,0 +1,50 @@
+<html>
+  <head>
+  <title>JUNG Demo: Multi View Demo</title>
+  <link rel="stylesheet" href="../default.css" type="text/css" media="screen" />  
+  </head>
+  <body>
+    <applet code="samples.graph.MultiViewDemo.class"
+            archive="jar/jung-ext.jar,jar/colt.jar,jar/commons-collections.jar"
+            width="700" height="400">
+    </applet>
+    
+	<p>
+	This example demonstrates JUNG's ability to show multiple views of the
+	same graph, and to share transformers between multiple views.
+	There is one VisualizationModel with one Layout, and there 
+	are three VisualizationViewers, one for each View. 
+	All three views share the same layout transformer, and all three views
+	share the same view transformer.
+	Each View uses a different style of scaling with the mouse
+	wheel. In View 1, the mouse wheel scales the layout transformer, so all three views
+	are affected. In View 2, the mouse wheel scales the view transformer, so all three
+	views are scaled with the view transformer.
+	In View 3, the mouse wheel uses a Crossover feature. All scaling
+	above 1.0 is done in the shared layout transformer. All scaling
+	below 1.0 is done in the shared view transformer.
+	<p>Be sure to try out the mouse listeners:
+   <h3>Picking Mode:</h3>
+	<ul>
+	<li> MouseButtonOne press on a Vertex or Edge to select it
+	<li> MouseButtonOne+Shift press on a Vertex or Edge to add or toggle selection
+	<li> MouseButtonOne+drag on a Vertex to move all selected vertices
+	<li> MouseButtonOne+drag to select Vertices in a rectangle
+	<li> MouseButtonOne+Shift+drag to add to selection with Vertices in a rectangle
+	</ul>
+	<p>
+	<h3>TransformingMode:</h3>
+	<ul>
+	<li> MouseButtonOne+drag to translate the display
+	<li> MouseButtonOne+Shift+drag to rotate the display
+	<li> MouseButtonOne+ctrl(or Command)+drag to shear the display
+	</ul>
+	<p>
+	<h3>Both Modes:</h3>
+	<ul>
+	<li> MouseWheel to scale. When scale &lt; 1, view is scaled. When scale &gt; 1, layout is scaled.
+	</ul>
+	</p>	
+	</p>	
+	  </body>
+</html>

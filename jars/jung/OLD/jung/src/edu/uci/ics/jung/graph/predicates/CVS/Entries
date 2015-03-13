@@ -1,0 +1,24 @@
+/CliqueGraphPredicate.java/1.2/Tue Jun  6 23:46:42 2006//
+/ConnectedGraphPredicate.java/1.7/Fri Nov  5 18:45:05 2004//
+/ContainsUserDataKeyVertexPredicate.java/1.1/Sat Nov  6 18:38:03 2004//
+/EdgePredicate.java/1.5/Fri Dec 10 01:22:30 2004//
+/GPredicate.java/1.1/Sun May  9 18:07:49 2004//
+/GraphPredicate.java/1.3/Mon Mar 22 22:51:24 2004//
+/IsolatedVertexPredicate.java/1.6/Fri Apr 30 02:22:00 2004//
+/KPartiteEdgePredicate.java/1.5/Fri Apr 30 02:22:00 2004//
+/NotInGraphEdgePredicate.java/1.6/Fri Dec 10 01:22:30 2004//
+/NotInGraphVertexPredicate.java/1.7/Fri Dec 10 01:22:30 2004//
+/ParallelEdgePredicate.java/1.5/Fri Apr 30 02:22:00 2004//
+/ReciprocatedDirectedEdgePredicate.java/1.2/Sat Nov  6 18:09:43 2004//
+/SelfLoopEdgePredicate.java/1.6/Fri Apr 30 02:22:00 2004//
+/SimpleEdgePredicate.java/1.5/Fri Apr 30 02:22:00 2004//
+/SinkVertexPredicate.java/1.2/Sat Nov  6 18:09:43 2004//
+/SourceVertexPredicate.java/1.2/Sat Nov  6 18:09:43 2004//
+/ThresholdPredicate.java/1.1/Sat Nov  6 18:38:03 2004//
+/TreePredicate.java/1.6/Tue Jun  6 23:46:42 2006//
+/UncopyablePredicate.java/1.1/Fri Dec 10 01:22:30 2004//
+/UserDatumEdgePredicate.java/1.9/Mon Sep 26 06:31:53 2005//
+/UserDatumVertexPredicate.java/1.8/Mon Sep 26 06:31:53 2005//
+/VertexPredicate.java/1.5/Fri Dec 10 01:22:30 2004//
+/package.html/1.2/Fri Dec 17 01:19:36 2004//
+D

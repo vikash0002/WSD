@@ -1,0 +1,45 @@
+<html>
+  <head>
+  <title>JUNG Demo: Vertex Image Shaper Demo</title>
+  <link rel="stylesheet" href="../default.css" type="text/css" media="screen" />  
+  </head>
+  <body>
+    <applet code="samples.graph.VertexImageShaperDemo.class"
+            archive="jar/jung-ext.jar,jar/colt.jar,jar/commons-collections.jar,jar/slashdoticons.jar"
+            width="600" height="500">
+    </applet>
+    
+	<p>
+	This example demonstrates how to place image icons on the vertices. 
+	The demo also shows how to extract the outline of the opaque part of
+	a transparent image and create a java.awt.Shape. By doing so:
+	<ul>
+	<li>Vertex selection is constrained to the visible part of the image
+	<li>Edge arrows follow the outline of the visible part of the image.
+	</ul>
+    <p>Be sure to try out the mouse listeners:
+    <p>
+    <h3>Picking Mode:</h3>
+	<ul>
+	<li> MouseButtonOne press on a Vertex or Edge to select it
+	<li> MouseButtonOne+Shift press on a Vertex or Edge to add or toggle selection
+	<li> MouseButtonOne+drag on a Vertex to move all selected vertices
+	<li> MouseButtonOne+drag to select Vertices in a rectangle
+	<li> MouseButtonOne+Shift+drag to add to selection with Vertices in a rectangle
+	</ul>
+	<p>
+	<h3>TransformingMode:</h3>
+	<ul>
+	<li> MouseButtonOne+drag to translate the display
+	<li> MouseButtonOne+Shift+drag to rotate the display
+	<li> MouseButtonOne+ctrl(or Command)+drag to shear the display
+	</ul>
+	<p>
+	<h3>Both Modes:</h3>
+	<ul>
+	<li> MouseWheel to scale. When scale &lt; 1, view is scaled. When scale &gt; 1, layout is scaled.
+	</ul>
+	
+	</p>	
+	  </body>
+</html>

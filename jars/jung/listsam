@@ -1,0 +1,5 @@
+pushd .
+cd Samples/Basic/
+ls *.java
+popd
+

@@ -1,0 +1,44 @@
+<html>
+  <head>
+  <title>JUNG Sample: Bipartite Graphs and the Southern Women Dataset</title>
+  <link rel="stylesheet" href="../default.css" type="text/css" media="screen" />  
+  </head>
+  <body>
+    <applet code="samples.graph.southern.SouthernWomenApplet.class"
+            archive="jar/jung-ext.jar,jar/colt.jar,jar/commons-collections.jar"
+            width="200" height="100">
+    </applet>
+    
+    <h1>The Southern Women Dataset</h1>
+
+	<p>
+	This page demonstrates JUNG's ability to create bipartite graphs, 
+	to fold them into single-mode graphs, and to interactively visualize
+	user changes to the data. It uses Davis, Gardner, and Garder's
+	dataset from their 1941 <i>Deep South</i> (as reprinted in Freeman's 
+	<a href="http://moreno.ss.uci.edu/dgg3a.pdf">2002 paper</a>, figure 1).
+	</p>
+	
+	<p>This applet presents three panels. On the left side, the full bipartite 
+	graph is laid out, matching women to the dates of parties. Vertices are 
+	rendered with blue squares for women's names, red squares for the dates.
+	The graph is laid out with the Kamada-Kawai algorithm.</p>
+	
+	<p>The middle panel shows the woman-to-woman graph. Two women are linked
+	if they co-attended at least one party. The nodes are laid out with a 
+	force-directed spring embedder. The thickness of the line between
+	a pair of women is proportionate to the number of parties they 
+	co-attended.</p>
+	
+	<p>The right-most panel shows the list of dates of parties.</p>
+
+	<h2>Removing Parties</h2>
+
+	<p>It is the different parties that makes this dataset interesting. Were
+	some of the parties removed, the graph of connections looks very different.
+	It is the parties on 23-Feb, 15-Mar, 8-Apr, 19-May, and 16-Sep that bring all 
+	the women together. Clicking on a party in the left graph causes the middle 
+	graph--the folded version--to be recalculated without that party. </p>
+	
+	  </body>
+</html>

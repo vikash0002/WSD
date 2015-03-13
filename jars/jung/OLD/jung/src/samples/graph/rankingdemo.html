@@ -1,0 +1,25 @@
+<html>
+  <head>
+  <title>JUNG Demo: Ranking Demo</title>
+  <link rel="stylesheet" href="../default.css" type="text/css" media="screen" />  
+  </head>
+  <body>
+    <applet code="samples.graph.RankingDemoDriver.class"
+            archive="jar/jung-ext.jar,jar/colt.jar,jar/commons-collections.jar"
+            width="880" height="640">
+    </applet>
+    
+	<p>
+	This demonstrates several ranking algorithms within JUNG. The vertices
+	are laid out with the Fruchterman-Rheingold layout. It is possible
+	to <b>filter out vertices</b> with the lower slider (nodes with low 
+	betweeness are removed first), and to <b>scale</b> the vertices with
+	the upper slider. 
+	</p>
+	<p>
+	The system recalculates the pagerank and degree each time the
+	graph filter is changed. The graph is based on a segment of a 
+	co-publication graph.
+	</p>	
+	  </body>
+</html>

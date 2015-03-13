@@ -1,0 +1,47 @@
+"Feature"	"Task"				"SignOff"	"Deadline"	"Priority"	"Orig Est"	"Cur Est"	"Elapsed"	"Remain"
+"GraphDraw"								
+	"Thread control"			"danyel"				2	4		4		4
+	"add / remove vertices"			"danyel"				2	10		10		10
+	"event handler: onClick"		"danyel"				1	3		3		3
+	"layouts as helpers not storers"	"danyel"				2	8		8		8
+"Halloween Build"								0
+	"Build JAR file"			"danyel"				1	0.5		0.5		0.5
+	"Test JAR file on desktop"		"danyel"				1	0.25		0.25		0.25
+	"Build Javadoc"				"danyel"				1	0.25		0.25		0.25
+	"CVS TAG trunk as ""1.1 Haloween"""	"danyel"				1	0.25		0.25		0.25
+"Build Process"								0
+	"Auto-build should construct zip"	"danyel"				3	4		4		4
+	"Auto-build should CVS tag"		"danyel"				3	1		1		1
+	"Auto-build should upload to SF"	"danyel"				4	4		4		4
+								0
+								0
+	"GraphDraw: Add/Remove Vert"			2	10			0
+	"GraphDraw: Event handlers"			1	3			0
+	"GraphDraw: Cleanup"			2	6			0
+	"BipartiteGraph: Create Hypergraph"			5	3			0
+"Merging Joshua_Test_Branch"
+	"eliminate vertex-centered edge removal methods"	"joshua"		2	1.0		1.0		0.5		0
+	"replace wipeVertex() with initialize()"		"joshua"		2	0.25		0.25 		0.25		0
+	"add BipartiteFile"					"joshua"		2	1.5		1.5		2.0
+	"change edge copying to use clone()"			"joshua"		2	0.5		0.5		0.25		0
+	"add AbstractSparseGraph.equals()"			"joshua"		2	0.5		0.5		0.25		0
+	"introduce SparseVertex, remove (un)directed"		"joshua"		1	4.0		4.0		?		0
+	"move methods down hierarchy from Archetype"		"joshua"		2	2.0		2.0		2.0		0
+	"change edge equivalency to use edge IDs"		"joshua"		2	1.5		1.5		0.5		0
+	"miscellaneous bug fixes/unit tests (merge cleanup)"	"joshua"		1	8.0		8.0		8.0
+"StringLabeller: allow setting of CopyAction"
+"Visualization Tasks"
+	"directed edge visualization"	""		4
+	"self-loop visualization"
+"Specification of graph/edge types for getType()"
+"Refactor methods taking DirectedGraph to Graph where appropriate"
+"Parallel edge support"
+"Self-loop support"
+"Algorithms"
+	"Hierarchical Bicomponent Clusterer"	"scott"		3	"4"	"4"
+	"GRIP Viz Algorithm"			"scott"		4	"12"	"12"
+	"Fast ScaleFree Graph Generator"	"scott"		4	"6"	"6"
+	"SimRank Algorithm"			"scott"		5	"8"	"8"
+"Self loop documentatoin"		"scott"		1	"2"	"2"					
+"Equivalency Assignment"		"Unassigned"		2	"8"	"8"
+"Graph Event Listeners"		"Unassigned"		2	"8"	"8"

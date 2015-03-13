@@ -1,0 +1,135 @@
+
+
+
+
+
+
+------------------------------------------------------------------------------------------
+NOVEMBER 3, 2003: EVERYTHING AFTER THIS LINE IS OBSOLETE AND KEPT ONLY FOR INTEREST REASONS
+------------------------------------------------------------------------------------------
+
+JUNG RELEASE 1.0: PENDING TASKS AND ISSUES
+
+TODO NOTES FROM MEETING:
+
+TASKS:
+	NEW LAYOUT ALGORITHM (Biao)
+	NEW ONCOPY (Scott)     -- done
+	NEW FILTERS (Danyel)	-- done
+	EQUIVALENCE (Joshua)
+SHIPPING DATE: AUGUST 1, 2003
+
+DEADLINES
+	JULY  7: CODE COMPLETE FOR RELEASE
+			 from here on, fix only bugs and errors
+	JULY 14: JAVADOC COMPLETE
+	JULY 21: FLESHED OUT / CORRECTED
+	JULY 28: WEB PAGES READY. READY TO SHIP
+	AUG   1: SHIP IT
+
+(7) Implementation of vertex mapping/equivalence 
+	[In progress; joshua]
+
+(8) Documentation:
+* FAQ
+* Javadoc
+* comments in every file should include *license agreement*
+* release notes/known bugs/...
+* conceptual overview, tutorial, ...
+* web page (host on Sourceforge)
+  - Biao has offered to do this
+(10) Unit testing
+
+(11) UserData: SHARED flag does not have the right behavior with Strings 
+     (and presumably other immutable objects): 
+     v1.addUserData(key, datum, SHARED);
+     v2.importUserData(v1);
+     v1.setUserData(key, datum2, SHARED);
+     --> at this point v1.key and v2.key no longer point to the same object.
+     - possible solution: create a cloneable ReferenceObject that points to the 
+       added object, so copyAction() will now have the following behavior:
+       REPLICATE: clone the ReferenceObject, return this clone.
+       REMOVE: return null.
+       SHARED: return the ReferenceObject.
+       CLONE: clone both the Reference Object and the encapsulated object, 
+              and return these.
+
+POST RELEASE    
+(4) Danyel's Abstract Visualizer:
+    Still waiting for comments on scratch.danyel.GraphDraw
+
+(9) Refactoring GraphMatrixOperations
+
+(10) Event Registry & Event passing mechanism
+
+--------------------------------------------------------------------------------------
+COVERED AND REMOVED POINTS
+
+
+(6) Filters, improved
+	Filters are correctly implemented. -DAF
+
+(14) copy uniqueness: currently this is possible...
+     - v1.copy(H); v1.copy(H); // 2 copies of v1 in H
+     - v1.copy(G); // copy v1 from G to itself
+SCOTT: Obviously checks can be put in to prevent this. Joshua, are you suggesting that it should
+be prevented at the interface level?
+DANYEL: This is a runtime check now; see CopyGraphTest for details.
+
+
+- Have at least 2 different layout algorithms
+Check. See "CircleVisualizer". It's imperfect, but it demonstratres a
+different visualization. And forces me to think about ways that different
+visualizations can annotate. (Often, there are two stages to an animation
+process: pick new locations, and move to new locations. Then repeat. Right
+now, the Visualizer API doesn't make it clear which step is going on)
+
+- refactor package structure
+    In process.
+
+- Provide at least one working viz demo
+    check. will be enhanced by API
+    
+- onCopy has been modified so that it now takes in the source and target UserDataContainers
+
+- addVertex() has been removed from Graph and replaced by addVertex(Vertex v) so as to allow multiple types of vertices. 
+  Same thing for addEdge.
+  
+- Decorators have been modified so that keys are assumed to be Objects rather than Strings.
+
+- GraphML file support has been added
+
+- increment(value) has been changed to add(value) and decrement(value) has been changed to subtract(value)
+
+- all public references to id have been removed from graph
+
+
+---------
+This is now moot. Both ways are acceptable
+2) Danyel's Vertex Decoration Challenge:
+    * Scott suggested moving Vertex decoration into the Vertices, rather
+    than the Graph. Josh hasn't weighed in.
+    IMPLEMENTATION: ???
+
+JOSHUA: I'm fine with making storage vertex-local, although I'm not convinced 
+we've spotted all the gotchas for either graph- or vertex-local storage of 
+decorations.
+
+
+---------
+This is put on hold for a later release
+ 5) Registry
+        * Demo from Scott soon?
+        Scott: Check out jung.graph.registry
+        
+--------
+This has been put on hold until Joshua comes up with a new counter-proposal
+[Scott suggests:]
+- Finalize on mechanism for copying vertices and edges, i.e. whether to use a 
+signifier-based approach or a reference based approach. Currently Scott and Danyel
+seem to be in favor of the former and Joshua seems to favor the latter. Ideally,
+some sort of consensus could be reached if not majority rules. Suggestion for Joshua:
+If you want to make a strong case for the reference based approach, demonstrate what is
+deficient in the signifier-based approach and demonstrate how the reference based approach
+resolved all of the deficiencies.
+

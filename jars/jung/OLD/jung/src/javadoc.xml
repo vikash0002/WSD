@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Jung" default="javadoc">
+    <target name="javadoc">
+        <javadoc destdir="D:\Research\Javadoc" access="protected"
+            source="1.4" use="true" notree="false" nonavbar="false"
+            noindex="false" splitindex="true" author="true"
+            version="true" nodeprecatedlist="false" nodeprecated="false"
+            packagenames="edu.uci.ics.jung.graph.filters.impl,edu.uci.ics.jung.random.permuters,edu.uci.ics.jung.io,edu.uci.ics.jung.algorithms.importance,edu.uci.ics.jung.utils,edu.uci.ics.jung.random.generators,edu.uci.ics.jung.algorithms,edu.uci.ics.jung.algorithms.connectivity,edu.uci.ics.jung.visualization.graphdraw,edu.uci.ics.jung.algorithms.flows,edu.uci.ics.jung.algorithms.cluster,edu.uci.ics.jung.graph,edu.uci.ics.jung.algorithms.shortestpath,edu.uci.ics.jung.graph.decorators,edu.uci.ics.jung.algorithms.optimization,edu.uci.ics.jung.graph.filters,edu.uci.ics.jung.exceptions,edu.uci.ics.jung.graph.impl,edu.uci.ics.jung.visualization,samples.graph,edu.uci.ics.jung.statistics"
+            sourcepath="."
+            classpath="D:\Research\ext\colt.jar;D:\Research\ext\commons-collections.jar;D:\Research\ext\junit.jar;D:\Research\ext\piccolo.jar;D:\Research\ext\piccolox.jar"
+            overview="D:\Research\Workspace\Jung\overview.html"
+            doctitle="JUNG API" additionalparam="-quiet -noqualifier java.*:javax.*:cern.*:org.w3c.*:org.xml.*:junit.*:org.apache.*">
+            <link href="http://java.sun.com/j2se/1.4.1/docs/api"/>
+            <link href="http://java.sun.com/j2se/1.4.1/docs/api"/>
+            <link href="http://java.sun.com/j2se/1.4.1/docs/api"/>
+            <link href="http://java.sun.com/j2se/1.4.1/docs/api"/>
+            <link href="http://java.sun.com/j2se/1.4.1/docs/api"/>
+            <link href="http://java.sun.com/j2se/1.4.1/docs/api"/>
+            <link href="http://java.sun.com/j2se/1.4.1/docs/api"/>
+            <link href="http://java.sun.com/j2se/1.4.1/docs/api"/>
+            <link href="http://java.sun.com/j2se/1.4.1/docs/api"/>
+            <link href="http://hoschek.home.cern.ch/hoschek/colt/V1.0.3/doc/"/>
+            <link href="http://jakarta.apache.org/commons/collections/api/"/>
+            <link href="http://www.junit.org/junit/javadoc/3.8.1/"/>
+        </javadoc>
+    </target>
+</project>

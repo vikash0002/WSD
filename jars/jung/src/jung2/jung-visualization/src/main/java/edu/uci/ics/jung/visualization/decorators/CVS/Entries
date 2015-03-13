@@ -1,0 +1,18 @@
+/AbstractEdgeShapeTransformer.java/1.6/Mon Apr 28 23:59:04 2008//
+/AbstractVertexShapeTransformer.java/1.2/Mon Jun 16 06:00:42 2008//
+/ConstantDirectionalEdgeValueTransformer.java/1.11/Thu Feb 26 06:38:26 2009//
+/DefaultVertexIconTransformer.java/1.2/Mon Jan 29 01:41:44 2007//
+/DirectionalEdgeArrowTransformer.java/1.9/Mon Jun 16 06:00:42 2008//
+/EdgeShape.java/1.18/Mon Mar  9 05:27:04 2009//
+/EllipseVertexShapeTransformer.java/1.1/Thu Nov  9 00:54:23 2006//
+/GradientEdgePaintTransformer.java/1.15/Mon Apr 28 23:59:04 2008//
+/InterpolatingVertexSizeTransformer.java/1.2/Thu Feb 26 06:38:26 2009//
+/NumberFormattingTransformer.java/1.1/Thu Feb 26 06:38:26 2009//
+/PickableEdgePaintTransformer.java/1.3/Tue Mar 18 23:54:40 2008//
+/PickableVertexIconTransformer.java/1.1/Thu Nov  9 00:54:23 2006//
+/PickableVertexPaintTransformer.java/1.2/Sat Mar 21 00:49:40 2009//
+/SettableVertexShapeTransformer.java/1.1/Thu Nov  9 00:54:23 2006//
+/ToStringLabeller.java/1.2/Tue Oct 31 18:49:30 2006//
+/VertexIconShapeTransformer.java/1.2/Mon Jan 29 01:41:44 2007//
+/package.html/1.1/Wed Jul  9 23:48:55 2008//
+D

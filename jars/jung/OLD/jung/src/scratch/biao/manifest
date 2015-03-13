@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: scratch.biao.netsight.NetsightUI
+Class-Path: colt.jar commons-collections.jar
+

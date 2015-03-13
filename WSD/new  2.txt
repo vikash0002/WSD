@@ -1,0 +1,6 @@
+public static void removeDuplicate(ArrayList arlList)
+  {
+   HashSet h = new HashSet(arlList);
+   arlList.clear();
+   arlList.addAll(h);
+  }

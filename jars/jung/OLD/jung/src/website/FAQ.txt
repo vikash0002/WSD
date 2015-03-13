@@ -1,0 +1,110 @@
+FAQ for JUNG
+
+
+- What is JUNG for?
+
+JUNG is a Java-based open-source software library designed to support the modeling, analysis, 
+and visualization of data that can be represented as graphs. Its focus is on mathematical 
+and algorithmic graph applications pertaining to the fields of social network analysis, information 
+visualization, knowledge discovery and data mining. However, it is not specific to these
+fields and can be used for many other applications pertaining to graphs and networks.
+
+- I heard JUNG is open-source. What license does it use?
+
+JUNG is licensed and made freely available under the Berkeley Software Distribution (BSD) license.
+
+- What specific algorithms does it provide?
+
+JUNG provides a number of algorithms. Since new algorithms are constantly being added it's best to
+look at the ...
+
+- What does JUNG stand for?
+
+JUNG stands for the Java Universal Network/Graph Framework. If you find various references in the 
+code such as GraphArchetype you can be sure that we did not forget about our dear friend Carl. :)
+
+- Why was JUNG written in Java?
+
+...
+
+- Does JUNG support dynamic graphs?
+
+Yes, JUNG supports dynamic graphs that can be changed both through 
+a system of FILTERS or by explicitly adding and removing nodes.
+Either way, it's easy to visualize the results, to apply graph
+algorithms to the results, and to manipulate those results 
+further.
+
+- Is there a limit to the size of graphs JUNG can handle?
+
+No. The only limit to the size graphs JUNG can support is the hardware you are using to run the Java Virtual Machine.
+We have on many occasions used JUNG to analyze sparse graphs with more 10,000 nodes.
+
+- What kind of data types does JUNG support (e.g. labels, weights,etc.)?
+
+One of JUNG's key strengths is that it can support any data type that extends the Java class Object.
+
+
+- How do I use JUNG?
+
+Simply call JUNG's library calls from your own code. See our sample
+code for examples. <XXX>
+
+- How is JUNG different from application/library XYZ?
+
+3) How is JUNG different from...
+
+		... UCINET?
+
+		UCINET is an application that provides modules for
+		common graph algorithms in social network analysis.
+		If you want to do something in UCINET fifty times,
+		(say, run the same network without a particular
+		node) you need to re-run the same sequence of operations.
+
+		Furhter, UCINET cannot be embedded into applications:
+		you can't call UCINET in an end-user display.
+
+		JUNG provides facilities to dynamically change graphs,
+		to programatically call code, and to output the results
+		as the program continues.
+
+		... PAJEK?
+
+		PAJEK is a visualization tool for networks. JUNG
+		provides many algorithms that PAJEK does not, and--
+		as noted for UCINET--is easily incorporated into
+		network applications.
+
+		JUNG is capable of both reading and writing PAJEK-
+		format files.
+
+		... R?	http://www.r-project.org/
+
+		R is a language for graph and network manipulation. It is a
+		very powerful language that provides a wide variety of
+		tools for statistical analysis. However, it is difficult
+		to interchange R with other programming systems.
+
+		JUNG is provided as a Java library, and can therefore
+		be dropped into existing code with little modification.
+
+		... GFC?  http://www.alphaworks.ibm.com/tech/gfc
+
+		GFC is a graph drawing-oriented package released by IBM.
+		It is specific to using Java's AWT/Swing, and contains
+		few graph manipulation algorithms.
+
+		JUNG is open-source, free, and has a wide variety of
+		algorithms available. Better, it's easily extensible
+		through a widely-documented API: if it's not there yet,
+		you can add it yourself.
+
+
+- Is JUNG specific to Swing? Can I use JUNG with SWT, or 
+other windowing toolkits?
+
+JUNG's visualization system, by default, renders to a Swing
+view. However, it is possible to write front-ends in other
+languages. The visualization algorithm and most of the
+underlying code wouldn't change at all.

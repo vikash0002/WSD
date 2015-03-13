@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+
+<!-- 
+	 This is a simple build file for users to build jung.jar
+     from the main source tree. 
+     This build file expects to find the colt.jar and
+     commons-collections.jar files in the project lib
+     directory.
+     -->
+
+<project name="jung" default="build" basedir=".">
+
+<property name="src" value="./src"/>
+<property name="classes" value="./classes"/>
+<property name="lib" value="./lib"/>
+
+<path id="project.path">
+  <pathelement location="${classes}"/>
+  <fileset dir="${lib}"
+    includes="commons-collections*.jar colt*.jar"/>
+</path>
+
+<target name="init" description="makes required output directories">
+  <mkdir dir="lib"/>
+  <mkdir dir="classes"/>
+</target>
+
+<target name="compile" depends="init" description="compiles the source">
+  <javac srcdir="${src}"
+	 destdir="${classes}"
+	 includes="**/*.java"
+	 excludes="scratch/** test/**"
+	 deprecation="off"
+	 debug="on">
+    <classpath refid="project.path"/>
+  </javac>
+</target>
+
+<target name="build" depends="compile" description="creates the jung.jar file">
+  <jar jarfile="${lib}/jung.jar"
+       basedir="${classes}" />
+</target>
+
+<target name="clean" description="removes the jung.jar and class files">
+  <delete>
+    <fileset dir="${lib}" includes="jung.jar" />
+    <fileset dir="${classes}" includes="**" />
+  </delete>
+</target>
+</project>
+
+		    

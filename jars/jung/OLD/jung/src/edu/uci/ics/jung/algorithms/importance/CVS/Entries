@@ -1,0 +1,20 @@
+/AbstractRanker.java/1.26/Tue Apr  4 23:27:34 2006//
+/BaryCenter.java/1.2/Tue Jun  6 23:46:42 2006//
+/BetweennessCentrality.java/1.17/Mon Apr 17 04:26:23 2006//
+/DegreeDistributionRanker.java/1.16/Wed Sep 21 00:05:51 2005//
+/EdgeRanking.java/1.6/Wed Jul 30 08:40:28 2003//
+/HITS.java/1.16/Fri Mar 25 02:56:54 2005//
+/HITSWithPriors.java/1.17/Fri Mar 25 02:56:54 2005//
+/KStepMarkov.java/1.18/Fri Mar 25 02:56:54 2005//
+/MarkovCentrality.java/1.13/Fri Mar 25 02:56:54 2005//
+/NodeRanking.java/1.4/Wed Jul 30 08:40:28 2003//
+/PageRank.java/1.27/Tue Apr  4 23:27:34 2006//
+/PageRankWithPriors.java/1.15/Mon Nov  8 09:32:52 2004//
+/RandomWalkBetweenness.java/1.4/Tue Jun  6 23:46:42 2006//
+/RandomWalkSTBetweenness.java/1.4/Tue Jun  6 23:46:42 2006//
+/Ranking.java/1.5/Wed Jul 30 08:40:28 2003//
+/RelativeAuthorityRanker.java/1.6/Wed Jul 30 08:40:28 2003//
+/VoltageRanker.java/1.4/Tue Jun  6 23:46:42 2006//
+/WeightedNIPaths.java/1.20/Fri Mar 25 02:56:54 2005//
+/package.html/1.4/Fri Dec 17 01:19:29 2004//
+D

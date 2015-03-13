@@ -1,0 +1,16 @@
+/AbstractElementParser.java/1.2/Tue Feb  3 00:28:35 2009//
+/DataElementParser.java/1.2/Tue Feb  3 00:28:35 2009//
+/EdgeElementParser.java/1.2/Tue Feb  3 00:28:35 2009//
+/ElementParser.java/1.1/Fri Aug  1 00:50:25 2008//
+/ElementParserRegistry.java/1.2/Tue Feb  3 00:28:35 2009//
+/EndpointElementParser.java/1.2/Tue Feb  3 00:28:35 2009//
+/GraphElementParser.java/1.2/Tue Feb  3 00:28:35 2009//
+/GraphMLEventFilter.java/1.1/Fri Aug  1 00:50:33 2008//
+/HyperEdgeElementParser.java/1.2/Tue Feb  3 00:28:35 2009//
+/KeyElementParser.java/1.2/Tue Feb  3 00:28:35 2009//
+/NodeElementParser.java/1.2/Tue Feb  3 00:28:35 2009//
+/ParserContext.java/1.1/Tue Feb  3 00:41:27 2009//
+/PortElementParser.java/1.2/Tue Feb  3 00:28:35 2009//
+/StringElementParser.java/1.2/Tue Feb  3 00:28:35 2009//
+/UnknownElementParser.java/1.1/Fri Aug  1 00:50:26 2008//
+D
